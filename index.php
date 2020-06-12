@@ -12,7 +12,19 @@
     
         $row = $res->fetch_assoc();
         $url = $row['url'];
-        header("Location:".$url);
+        
+        $prefix1 = substr($url,6);
+        $prefix2 = substr($url,7);
+        
+        if($prefix1=="http://" || $prefix2=="https://"){
+            
+            header("Location:".$url);
+            
+        }else{
+            
+            header("Location:http://".$url);
+            
+        }
         
     }else{
         
