@@ -12,9 +12,9 @@
     
         $row = $res->fetch_assoc();
         $url = $row['url'];
-        
-        $prefix1 = substr($url,6);
-        $prefix2 = substr($url,7);
+
+        $prefix1 = substr($url,0,7);
+        $prefix2 = substr($url,0,8);
         
         if($prefix1=="http://" || $prefix2=="https://"){
             
